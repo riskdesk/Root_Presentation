@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root iGaming Risk Intelligence Platform</title>
+    <!-- Tailwind CSS for strict structure -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for sleek tech aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for contextual banner logos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .tech-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* Interactive Root Tree Logo Element SVG Base - Enhanced Hover Zoom and Shine Glow Effect */
+        .root-logo {
+            width: 64px;
+            height: 64px;
+            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), filter 0.35s ease;
+            cursor: pointer;
+            will-change: transform, filter;
+        }
+        .root-logo:hover {
+            transform: scale(1.18);
+            filter: drop-shadow(0 0 14px rgba(31, 41, 55, 0.45)) brightness(1.15);
+        }
+
+        /* Large Animated Logo with working pulse transformation rule */
+        .big-root-logo {
+            width: 280px;
+            height: 280px;
+            animation: bigLogoPulse 6s ease-in-out infinite;
+            display: block;
+            will-change: transform;
+        }
+
+        @keyframes bigLogoPulse {
+            0%, 100% { transform: scale(1) translateY(0px); filter: drop-shadow(0 10px 15px rgba(0,0,0,0.03)); }
+            50% { transform: scale(1.03) translateY(-8px); filter: drop-shadow(0 25px 25px rgba(0,0,0,0.07)); }
+        }
+
+        /* Continuous Swinging/Floating Animations for ALL Headers */
+        @keyframes floatHeader {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-0.3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .floating-header {
+            animation: floatHeader 5s ease-in-out infinite;
+            display: inline-block;
+            will-change: transform;
+        }
+
+        /* Advanced Animations & Interactive Behaviors for Banners/Cards */
+        .interactive-banner {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 1);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .interactive-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.6s ease;
+        }
+        .interactive-banner:hover {
+            transform: translateY(-6px) scale(1.01);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0,0,0,0.01);
+            border-color: #d1d5db;
+        }
+        .interactive-banner:hover::before {
+            left: 100%;
+        }
+
+        /* Scrolling System Configuration */
+        .presentation-container {
+            display: flex;
+            width: 1100vw;
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+            will-change: transform;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Background Canvas Layer */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .banner-icon {
+            color: #4b5563;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Interconnected Poly-Net Background Layer -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Global Presentation Core Frame -->
+    <div class="presentation-container" id="presentationContainer">
+
+        <!-- SLIDE 1: INTRO TITLE -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/>
+                            <path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+                            <circle cx="50" cy="20" r="5" fill="#1f2937"/>
+                            <circle cx="25" cy="75" r="5" fill="#1f2937"/>
+                            <circle cx="75" cy="75" r="5" fill="#1f2937"/>
+                            <circle cx="50" cy="80" r="4" fill="#9ca3af"/>
+                        </svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">1 / 11</span>
+                </div>
+
+                <div class="my-auto grid grid-cols-12 gap-8 items-center w-full max-w-6xl mx-auto">
+                    <div class="col-span-7 text-center md:text-left">
+                        <p class="text-xs font-mono tracking-widest uppercase text-gray-500 mb-3">Risk Observation Operational Tool</p>
+                        <h1 class="floating-header text-5xl font-bold tracking-tight text-gray-900 mb-4 w-full">DEEP RISK TOOLS & REAL-TIME DETECTION ALERTS</h1>
+                        <h2 class="text-2xl font-light text-gray-500 tracking-wide uppercase">IGAMING RISK INTELLIGENCE PLATFORM</h2>
+                    </div>
+                    <div class="col-span-5 flex justify-center">
+                        <svg class="big-root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="1.5" stroke-dasharray="8 5"/>
+                            <path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="50" cy="20" r="6" fill="#1f2937"/>
+                            <circle cx="25" cy="75" r="6" fill="#1f2937"/>
+                            <circle cx="75" cy="75" r="6" fill="#1f2937"/>
+                            <circle cx="50" cy="80" r="5" fill="#6b7280"/>
+                        </svg>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: WHAT IS ROOT -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">2 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-4xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-6">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">WHAT IS ROOT?</h2>
+                    </div>
+                    <div class="space-y-4 w-full">
+                        <div class="interactive-banner p-6 rounded-lg flex items-start gap-4">
+                            <i data-lucide="shield" class="banner-icon mt-1"></i>
+                            <p class="text-gray-700 leading-relaxed font-light text-lg">Root is an institutional-grade Risk Management engine Designed explicitly for digital casinos and iGaming platforms.</p>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex items-start gap-4">
+                            <i data-lucide="activity" class="banner-icon mt-1"></i>
+                            <p class="text-gray-700 leading-relaxed font-light text-lg">By executing deep telemetry analyses in near zero-latency environments, Root protects operators against predatory behaviors, bonus abuse syndicates, and live dealer collusions.</p>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex items-start gap-4">
+                            <i data-lucide="lock" class="banner-icon mt-1"></i>
+                            <p class="text-gray-700 leading-relaxed font-light text-lg">It transforms structural vulnerability into hardened commercial security.</p>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Platform Scope: 3 Key Touchpoints -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">3 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-6xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-6">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">Platform Scope: 3 Key Touchpoints</h2>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 w-full">
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">Internal Use</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">Gives high management and internal stakeholders exact, role-tailored visibility into revenue health, platform stability, and high-level risk trends—completely free of noise or operational clutter.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">External Use</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">Provides B2B partners with their own dedicated, secure portal to independently monitor ecosystem performance and set customized alert thresholds for their specific business needs.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">The Core Risk Engine</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">The foundational Risk Management tool built for the Risk Management to proactively detect threats, uncover root causes, and resolve risks across both company and partner ecosystems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: AI DRIVEN TOOLS (MOVED TO POSITION 4) -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">4 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-6xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-6">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">AI driven Tools</h2>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 w-full">
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">AI Risk Management Assistant (CHAT BOT)</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">An AI-powered chatbot that helps risk teams quickly find players, analyze player behavior, review betting patterns, and generate insights from historical and real-time data.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">AI Anomaly Detection</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">AI continuously analyzes betting and transaction activity to identify unusual patterns, suspicious behavior, and potential risks that may be difficult to detect using traditional rule-based systems.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-lg flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">AI-Powered Smart Alerts</h3>
+                                <p class="text-gray-700 leading-relaxed font-light text-base">AI analyzes triggered alerts and player behavior to identify and filter false positives, helping risk teams focus on genuinely high-risk cases and reduce unnecessary manual reviews.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: CORE PILLARS -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">5 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-5xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-8">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">MULTI-RISK PLATFORM / PREVENTING ANY RISK</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 w-full">
+                        <div class="interactive-banner p-8 rounded-xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">OPERATIONAL ARCHITECTURE</span>
+                                    <i data-lucide="layers" class="banner-icon"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">MULTI-RISK PLATFORM</h3>
+                                <p class="text-gray-600 font-light leading-relaxed">A unified ecosystem analyzing diverse risk categories across vertical sectors to build bulletproof operator defense.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-8 rounded-xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">STRATEGIC OBJECTIVE</span>
+                                    <i data-lucide="eye-off" class="banner-icon"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">PREVENTING ANY RISK</h3>
+                                <p class="text-gray-600 font-light leading-relaxed">Proactive algorithmic detection designed to neutralize fraud, collusion, and software exploits before they occur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: DATA ENGINE LAYERS -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">6 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-5xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-8">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">MULTI-LAYER DATA ENGINE</h2>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 w-full">
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between h-64">
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <span class="px-2 py-1 bg-gray-200 text-xs font-mono rounded text-gray-700">SD LAYER</span>
+                                    <i data-lucide="database" class="banner-icon"></i>
+                                </div>
+                                <h3 class="text-lg font-bold mt-4 mb-2 text-gray-900">STANDARD DATA (SD)</h3>
+                                <p class="text-sm text-gray-600 font-light">Ingests fundamental event logs including bet sizes, multipliers, margins, win ratios, and game state durations dynamically.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between h-64">
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <span class="px-2 py-1 bg-gray-200 text-xs font-mono rounded text-gray-700">GSD LAYER</span>
+                                    <i data-lucide="cpu" class="banner-icon"></i>
+                                </div>
+                                <h3 class="text-lg font-bold mt-4 mb-2 text-gray-900">GAME SPECIFIC DATA (GSD)</h3>
+                                <p class="text-sm text-gray-600 font-light">Captures intricate physical and logic parameters such as shoe card counts, shuffle thresholds, wheel velocity, and spin deviation patterns.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between h-64">
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <span class="px-2 py-1 bg-gray-200 text-xs font-mono rounded text-gray-700">AD LAYER</span>
+                                    <i data-lucide="file-plus" class="banner-icon"></i>
+                                </div>
+                                <h3 class="text-lg font-bold mt-4 mb-2 text-gray-900">ADDITIONAL DATA (AD)</h3>
+                                <p class="text-sm text-gray-600 font-light">Integrates third-party user data including device hardware fingerprints, digital footprints, withdrawal speed history, and deposit metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: MAIN ALERTS SUITE -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">7 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-6xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-6">
+                        <h2 class="floating-header text-3xl font-bold tracking-tight text-gray-900">MAIN ALERTS SUITE</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 w-full">
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">BET/WIN/GGR/MULTIPLIER</h4>
+                                <i data-lucide="trending-up" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Flags sudden, abnormal Gross Gaming Revenue margin spikes.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">CONSECUTIVE CANCELLATIONS</h4>
+                                <i data-lucide="x-circle" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Detects patterns of sequential voids or unnatural wins.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">BET ANOMALY ALERT</h4>
+                                <i data-lucide="alert-triangle" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Spots wagers that diverge heavily from customer historical wagers.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">PLAYER TRANSACTION ANOMALY</h4>
+                                <i data-lucide="arrow-left-right" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Tracks rapid external deposits and internal wallet transfers.</p>
+                        </div>
+                        
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">PLAYER BALANCE THRESHOLD</h4>
+                                <i data-lucide="scale" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Triggers monitoring of balances beyond customer risk profile.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">FIRST-TIME CATEGORY BET</h4>
+                                <i data-lucide="sparkles" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Flags sudden high-stake play in previously unused games.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">JACKPOT & TOURNAMENT</h4>
+                                <i data-lucide="trophy" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Verifies player event telemetry logs prior to payouts.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px]">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">DEPOSIT COMPARISON</h4>
+                                <i data-lucide="git-compare" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Cross-references deposit origins and device metrics.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 w-full mt-4 justify-center">
+                        <div class="col-span-1"></div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px] col-span-1">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">LISTED PLAYERS ALERT</h4>
+                                <i data-lucide="users" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Detects logins from blacklists and self-excluded users.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-lg flex flex-col justify-between min-h-[110px] col-span-1">
+                            <div class="flex justify-between items-start gap-2 mb-1">
+                                <h4 class="font-bold text-sm text-gray-800">WITHDRAWAL ANOMALY</h4>
+                                <i data-lucide="download-cloud" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Reviews large outbound withdrawal wagers for manual approval.</p>
+                        </div>
+                        <div class="col-span-1"></div>
+                    </div>
+
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: LIVE CASINO ALERTS -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">8 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-5xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-8">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">LIVE CASINO ALERTS</h2>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 w-full">
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">DEALER-PLAYER MARGIN</h3>
+                                    <i data-lucide="percent" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Identifies margin anomalies between specific croupiers and players.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">GAME-PLAYER DEVIATION</h3>
+                                    <i data-lucide="bar-chart-2" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Detects statistically improbable real-time win streaks (Z-Score).</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">BLACKJACK CARD COUNTING</h3>
+                                    <i data-lucide="hash" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Isolates users executing advanced tracking against shoe thresholds.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">BASIC STRATEGY VERIFICATION</h3>
+                                    <i data-lucide="binary" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Analyzes deviations indicating the usage of robotic helper scripts.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">OPPOSITE BETS ALERT</h3>
+                                    <i data-lucide="split" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Spots hedged, opposite-table betting systems designed to wash bonus tokens.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-6 rounded-xl flex flex-col justify-between min-h-[140px]">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-bold text-lg text-gray-900">CRASH GAME PRECISION</h3>
+                                    <i data-lucide="gauge" class="banner-icon"></i>
+                                </div>
+                                <p class="text-sm text-gray-600 font-light">Tracks sub-second exit patterns to prevent robotic script triggers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: BONUS ANOMALY ALERTS -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">9 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-5xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-8">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">BONUS ANOMALY ALERTS</h2>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 w-full">
+                        <div class="interactive-banner p-8 rounded-xl min-h-[220px] flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start gap-2 mb-3">
+                                    <h3 class="font-bold text-xl text-gray-800">ABNORMAL WIN COUNT</h3>
+                                    <i data-lucide="plus-circle" class="banner-icon w-6 h-6 text-gray-500"></i>
+                                </div>
+                                <p class="text-gray-600 font-light leading-relaxed">Flags sessions where successful outcomes outperform normal probabilities under promo conditions.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-8 rounded-xl min-h-[220px] flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start gap-2 mb-3">
+                                    <h3 class="font-bold text-xl text-gray-800">ABNORMAL WIN AMOUNT</h3>
+                                    <i data-lucide="dollar-sign" class="banner-icon w-6 h-6 text-gray-500"></i>
+                                </div>
+                                <p class="text-gray-600 font-light leading-relaxed">Instantly isolates payout volumes that diverge sharply from regular mathematical variance parameters.</p>
+                            </div>
+                        </div>
+                        <div class="interactive-banner p-8 rounded-xl min-h-[220px] flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start gap-2 mb-3">
+                                    <h3 class="font-bold text-xl text-gray-800">BONUS PERIODICAL WIN SUM</h3>
+                                    <i data-lucide="calendar" class="banner-icon w-6 h-6 text-gray-500"></i>
+                                </div>
+                                <p class="text-gray-600 font-light leading-relaxed">Tracks accumulated promo earnings inside designated calendar frames to identify bonus abuse profiles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: BACK-OFFICE TOOLS -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">10 / 11</span>
+                </div>
+
+                <div class="my-auto max-w-6xl mx-auto w-full flex flex-col items-center">
+                    <div class="text-center mb-8">
+                        <h2 class="floating-header text-4xl font-bold tracking-tight text-gray-900">BACK-OFFICE RISK TOOLS</h2>
+                    </div>
+                    <div class="grid grid-cols-5 gap-4 w-full">
+                        <div class="interactive-banner p-4 rounded-xl flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-start gap-1">
+                                <h3 class="font-bold text-sm text-gray-800">RISK MANAGEMENT DASHBOARDS</h3>
+                                <i data-lucide="layout-dashboard" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Centralizes incoming real-time risk feeds and system telemetry in a single portal.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-xl flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-start gap-1">
+                                <h3 class="font-bold text-sm text-gray-800">RISKY GAMES CONSULTING</h3>
+                                <i data-lucide="help-circle" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">In-depth, algorithm-assisted expert advisory to discover and seal structural game flaws.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-xl flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-start gap-1">
+                                <h3 class="font-bold text-sm text-gray-800">DEVICE & IP MULTI-ACCOUNT</h3>
+                                <i data-lucide="fingerprint" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Employs unique fingerprinting algorithms to isolate linked multi-accounts.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-xl flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-start gap-1">
+                                <h3 class="font-bold text-sm text-gray-800">WINNER REPORTING TOOL</h3>
+                                <i data-lucide="file-text" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Generates comprehensive audit logs of player behaviors inside live tables.</p>
+                        </div>
+                        <div class="interactive-banner p-4 rounded-xl flex flex-col justify-between h-48">
+                            <div class="flex justify-between items-start gap-1">
+                                <h3 class="font-bold text-sm text-gray-800">ROULETTE TABLE DEVIATION</h3>
+                                <i data-lucide="pie-chart" class="banner-icon"></i>
+                            </div>
+                            <p class="text-xs text-gray-500 font-light">Automates complex Z-Score & Chi-Square variance testing to detect mechanical wheel drift.</p>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: THANK YOU -->
+        <section class="slide">
+            <div class="slide-content">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="root-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="2" stroke-dasharray="6 4"/><path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="20" r="5" fill="#1f2937"/><circle cx="25" cy="75" r="5" fill="#1f2937"/><circle cx="75" cy="75" r="5" fill="#1f2937"/><circle cx="50" cy="80" r="4" fill="#9ca3af"/></svg>
+                        <span class="tech-font font-bold tracking-widest text-xl">ROOT</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-mono">11 / 11</span>
+                </div>
+
+                <div class="my-auto w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center gap-8">
+                    <h1 class="floating-header text-6xl font-bold tracking-tight text-gray-900">THANK YOU</h1>
+                    
+                    <svg class="big-root-logo mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#1f2937" stroke-width="1.5" stroke-dasharray="8 5"/>
+                        <path d="M50 20 V50 M50 50 C40 65 25 75 25 75 M50 50 C60 65 75 75 75 75 M50 50 V80" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="50" cy="20" r="6" fill="#1f2937"/>
+                        <circle cx="25" cy="75" r="6" fill="#1f2937"/>
+                        <circle cx="75" cy="75" r="6" fill="#1f2937"/>
+                        <circle cx="50" cy="80" r="5" fill="#6b7280"/>
+                    </svg>
+                    
+                    <p class="tech-font tracking-widest text-xl font-bold text-gray-500 uppercase">ROOT: SEE BEYOND THE RISK</p>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Practical Navigation Controls Overlay Layer -->
+    <div class="fixed bottom-8 right-8 z-50 flex gap-2">
+        <button onclick="navigateSlide(-1)" class="w-12 h-12 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 flex items-center justify-center font-bold shadow-sm transition-all text-lg">&larr;</button>
+        <button onclick="navigateSlide(1)" class="w-12 h-12 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 flex items-center justify-center font-bold shadow-sm transition-all text-lg">&rarr;</button>
+    </div>
+
+    <script>
+        // SLIDE NAVIGATION LOGIC ENGINE
+        let currentSlide = 0;
+        const totalSlides = 11;
+        const container = document.getElementById('presentationContainer');
+
+        function updateSlidePosition() {
+            container.style.transform = `translateX(-${currentSlide * 100}vw)`;
+        }
+
+        function navigateSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+            updateSlidePosition();
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') navigateSlide(1);
+            if (e.key === 'ArrowLeft') navigateSlide(-1);
+        });
+
+
+        // COMPLEX MATHS-GRID POLYGON NETWORK ANIMATION ENGINE (Updated Configuration)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // 1. Increased background moving object quantities (from 45 to 90 nodes)
+        const numNodes = 90;
+        const nodes = [];
+
+        // 2. Increased velocity boundaries to make nodes slide faster (from 0.35 to 0.85)
+        for (let i = 0; i < numNodes; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.85,
+                vy: (Math.random() - 0.5) * 0.85,
+                radius: Math.random() * 2 + 1.5
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            ctx.strokeStyle = 'rgba(229, 231, 235, 0.4)';
+            ctx.lineWidth = 0.5;
+            let gridSize = 80;
+            for(let x=0; x<width; x+=gridSize) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+            }
+            for(let y=0; y<height; y+=gridSize) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
+            }
+
+            for (let i = 0; i < numNodes; i++) {
+                for (let j = i + 1; j < numNodes; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(209, 213, 219, ${1 - dist / 130})`;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            ctx.fillStyle = 'rgba(156, 163, 175, 0.6)';
+            for (let i = 0; i < numNodes; i++) {
+                const node = nodes[i];
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > width) node.vx *= -1;
+                if (node.y < 0 || node.y > height) node.vy *= -1;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Initialize Lucide Icons for embedded data layouts
+        lucide.createIcons();
+        animate();
+    </script>
+</body>
+</html>
